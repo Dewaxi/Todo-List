@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.0-web/css/all.min.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="alert feedback">
+            Please Enter a value
+        </div>
+        <!--form-->
+        <form id="todo-form">
+            <h4>to do list</h4>
+            <div class="input-group">
+                <input type="text" placeholder="Name..." id="item-input">
+                <button type="submit" class="btn submit-btn">add item</button>
+            </div>
+        </form>
+        <!--end of form-->
+        <div class="item-container">
+            <div class="item-list">
+                <!--single item-->
+            <!--<div class="item">
+                <h5 class="item-name">laundry</h5>
+                <div class="item-icons">
+                    <a href="#" id="complete-item" class="item-icon"><i class="far fa-check-circle"></i></a>
+                    <a href="#" id="edit-item" class="item-icon"><i class="far fa-edit"></i></a>
+                    <a href="#" id="delete-item" class="item-icon"><i class="far fa-times-circle"></i></a>
+                </div>
+            </div> -->
+            <!--end of single item-->
+            </div>
+            <button type="button" class="btn clear-btn">clear items</button>
+        </div>
+        
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>

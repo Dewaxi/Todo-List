@@ -3,6 +3,7 @@ const feedback = document.querySelector(".feedback");
 const inputItem = document.getElementById("item-input");
 const submitBtn = document.querySelector(".submit-btn");
 const itemList = document.querySelector(".item-list");
+
 const clearBtn = document.querySelector(".clear-btn");
 const form = document.querySelector("#todo-form")
 
@@ -10,7 +11,7 @@ let todoList = [];
 
 const handleItem = (itemName) => {
     const items = itemList.querySelectorAll(".item")
-    console.log(itemName);
+    
     items.forEach(item => {
       if (item.querySelector(".item-name").textContent === itemName) {
           //complete event listener
@@ -29,11 +30,14 @@ const handleItem = (itemName) => {
           })
            //delete event listener
            item.querySelector("#delete-item").addEventListener("click", function () {
-               itemList.removeChild(item)
+               
 
-               todoList = todoList.filter(function (item) {
-                return item !== itemName;
-            })
+               removeElement(item)
+              itemList.removeChild(item)
+             todoList = todoList.filter(function (item) {
+                  return item !== itemName;
+              })
+              
             feedback.innerHTML = "item deleted"
             feedback.classList.add("showItem")
             setTimeout(function () {
@@ -111,3 +115,12 @@ clearBtn.addEventListener("click", function () {
        }, 3000)
    
 })
+
+// remove element from todoList
+function removeElement(item) {
+    let newTodoList = [...todoList];
+    newTodoList.splice(item, 1);
+     localStorage.setItem("todoList", JSON.stringify(newTodoList))
+}
+console.log();
+

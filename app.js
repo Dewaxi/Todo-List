@@ -14,11 +14,7 @@ const handleItem = (itemName) => {
     
     items.forEach(item => {
       if (item.querySelector(".item-name").textContent === itemName) {
-          //complete event listener
-          item.querySelector("#complete-item").addEventListener("click", function () {
-              item.querySelector(".item-name").classList.toggle("completed");
-              this.classList.toggle("visibility")
-          })
+          
           //edit event listener
           item.querySelector("#edit-item").addEventListener("click", function () {
               inputItem.value = itemName;
@@ -57,7 +53,7 @@ const getList = (todoList) => {
         <div class="item">
         <h5 class="item-name">${item}</h5>
         <div class="item-icons">
-            <a href="#" id="complete-item" class="item-icon"><i class="far fa-check-circle"></i></a>
+            
             <a href="#" id="edit-item" class="item-icon"><i class="far fa-edit"></i></a>
             <a href="#" id="delete-item" class="item-icon"><i class="far fa-times-circle"></i></a>
         </div>
